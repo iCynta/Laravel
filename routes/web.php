@@ -23,13 +23,14 @@ Route::get('name/{name?}', function ($name="Unknown") {
     echo $name;
 });
 
-//Route::get('role', function () {
-//    echo "This is a ROLE based system";
-//});
-
 Route::get('role',[
    'middleware' => 'role:editor',
    'uses' => 'TestController@index',
+]);
+
+Route::get('terminate',[
+   'middleware' => 'terminate',
+   'uses' => 'ABCController@index',
 ]);
 
 Auth::routes();
