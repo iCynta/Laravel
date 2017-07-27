@@ -15,6 +15,7 @@ class test
      */
     public function handle($request, Closure $next)
     {
+		echo "Test Middleware";
         return $next($request);
     }
 }

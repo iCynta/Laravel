@@ -23,6 +23,15 @@ Route::get('name/{name?}', function ($name="Unknown") {
     echo $name;
 });
 
+//Route::get('role', function () {
+//    echo "This is a ROLE based system";
+//});
+
+Route::get('role',[
+   'middleware' => 'role:editor',
+   'uses' => 'TestController@index',
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
