@@ -59,5 +59,7 @@ class Kernel extends HttpKernel
         'role' => \App\Http\Middleware\RoleMiddleWare::class,
         'terminate' => \App\Http\Middleware\TerminateMiddleWare::class,
         'test' => \App\Http\Middleware\TestMiddleWare::class,
+        'First' => \App\Http\Middleware\FirstMiddleware::class, 
+        'Second' => \App\Http\Middleware\SecondMiddleware::class, 
     ];
 }

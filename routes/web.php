@@ -24,7 +24,7 @@ Route::get('name/{name?}', function ($name="Unknown") {
 });
 
 Route::get('role',[
-   'middleware' => 'role:editor',
+   'middleware' => 'role:Programmer',
    'uses' => 'TestController@index',
 ]);
 
@@ -32,6 +32,23 @@ Route::get('terminate',[
    'middleware' => 'terminate',
    'uses' => 'ABCController@index',
 ]);
+
+Route::get('/usercontroller/path',[
+   'middleware' => 'First',
+   'uses' => 'UserController@showPath'
+]);
+
+Route::get('/usercontroller/oauth',[
+   'middleware' => 'Second',
+   'uses' => 'UserController@index'
+]);
+
+Route::get('/usercontroller',[
+   'middleware' => 'Second',
+   'uses' => 'UserController@index'
+]);
+
+Route::resource('crud','CrudController');
 
 Auth::routes();
 
