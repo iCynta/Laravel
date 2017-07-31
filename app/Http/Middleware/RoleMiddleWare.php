@@ -18,4 +18,9 @@ class RoleMiddleWare
         echo "User role is ".$role;
         return $next($request);
     }
+    
+    public function terminate($request, $response)
+    {
+      echo "<br>Executing statements of terminate method of role.";
+    }
 }
